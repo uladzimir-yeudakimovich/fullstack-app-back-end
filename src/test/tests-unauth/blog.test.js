@@ -1,13 +1,13 @@
 const { request, routes } = require('../lib');
 
 const TEST_BLOG_DATA = {
-  title: 'Autotest blog',
+  title: 'AutoTest blog',
   author: 'Uladzimir Yeudakimovich',
   url: 'https://uladzimir-yeudakimovich.github.io/',
   likes: 100
 };
 
-describe('Blogs suite unauth', () => {
+describe('Blogs suite unAuth', () => {
   describe('GET all blogs', () => {
     it('should get 401 without token presented ', async () => {
       await request.get(routes.blogs.getAll).expect(401);

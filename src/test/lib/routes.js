@@ -22,6 +22,7 @@ module.exports = {
   },
   info: '/info',
   login: '/login',
+  refreshToken: '/refresh-token',
   registration: '/registration',
   persons: {
     getAll: '/api/persons',

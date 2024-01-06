@@ -15,8 +15,8 @@ const authReq = async req => {
   const token = await req
     .post(routes.login)
     .set('Accept', 'application/json')
-    .send({ login: 'admin', password: 'admin' })
-    .then(res => `Bearer ${res.body.token}`);
+    .send({ login: 'admin', password: '123456' })
+    .then(res => `Bearer ${res.body.accessToken}`);
 
   return reqWithToken(req, token);
 };

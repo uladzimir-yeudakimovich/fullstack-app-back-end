@@ -6,7 +6,7 @@ const connectToDb = callback => {
   connect(MONGODB_URI, {
     useNewUrlParser: true,
     useCreateIndex: true,
-    useUnifiedTopology: true,
+    useUnifiedTopology: true
   });
 
   connection.on('error', console.error.bind(console, 'connection error:'));

@@ -1,14 +1,14 @@
 const { request, routes } = require('../lib');
 
 const TEST_COURSES_DATA = {
-  name: 'Autotest course',
+  name: 'AutoTest course',
   parts: [
     { name: 'React', exercises: 12 },
     { name: 'Angular', exercises: 7 }
   ]
 };
 
-describe('Courses suite unauth', () => {
+describe('Courses suite unAuth', () => {
   describe('GET all courses', () => {
     it('should get 401 without token presented ', async () => {
       await request.get(routes.courses.getAll).expect(401);

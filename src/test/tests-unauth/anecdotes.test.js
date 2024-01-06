@@ -5,7 +5,7 @@ const TEST_ANECDOTES_DATA = {
   votes: 5
 };
 
-describe('Anecdotes suite unauth', () => {
+describe('Anecdotes suite unAuth', () => {
   describe('GET all anecdotes', () => {
     it('should get 401 without token presented ', async () => {
       await request.get(routes.anecdotes.getAll).expect(401);
