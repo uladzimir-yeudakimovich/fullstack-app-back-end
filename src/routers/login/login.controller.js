@@ -9,8 +9,7 @@ const loginUser = async (login, password) => {
   if (!(user && passwordCorrect)) {
     return;
   }
-  const { id } = user;
-  return { user, id, login };
+  return user;
 };
 
 module.exports = { loginUser };
