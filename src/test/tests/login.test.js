@@ -2,7 +2,7 @@ const { request, routes } = require('../lib');
 
 const TEST_USER_DATA = {
   login: 'admin',
-  password: 'admin'
+  password: '123456'
 };
 
 describe('Login suite', () => {
@@ -15,7 +15,9 @@ describe('Login suite', () => {
       .expect('Content-Type', /json/)
       .then(res => {
         expect(res.body.message).toContain('Successful login.');
-        expect(res.body.token).toContain('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXV');
+        expect(res.body.accessToken).toContain(
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXV'
+        );
         expect(res.body.user.password).toBeUndefined();
         expect(res.body.user).toMatchObject({
           login: TEST_USER_DATA.login

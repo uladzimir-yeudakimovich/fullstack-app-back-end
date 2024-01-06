@@ -22,7 +22,9 @@ describe('Registration suite', () => {
         .then(res => {
           userId = res.body.user.id;
           expect(res.body.message).toContain('Successful registration.');
-          expect(res.body.token).toContain('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXV');
+          expect(res.body.accessToken).toContain(
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXV'
+          );
           expect(res.body.user.password).toBeUndefined();
           expect(res.body.user).toMatchObject({
             name: TEST_USER_DATA.name,
