@@ -15,6 +15,7 @@ const blogsRouter = require('./routers/blogs/blog.router');
 const commentsRouter = require('./routers/comments/comments.router');
 const coursesRouter = require('./routers/courses/courses.router');
 const personsRouter = require('./routers/persons/persons.router');
+const projectsRouter = require('./routers/projects/projects.router');
 const usersRouter = require('./routers/users/user.router');
 const checkToken = require('./middleware/check-token');
 const unknownEndpoint = require('./middleware/unknown-endpoint');
@@ -43,6 +44,7 @@ app.use('/api/courses', checkToken, coursesRouter);
 app.use('/api/persons', checkToken, personsRouter);
 app.use('/api/users', checkToken, usersRouter);
 app.use('/api/v1/information', checkToken, informationRouter);
+app.use('/api/v1/projects', checkToken, projectsRouter);
 
 if (process.env.NODE_ENV === 'development') {
   const testingRouter = require('./routers/testing/testing.router');
