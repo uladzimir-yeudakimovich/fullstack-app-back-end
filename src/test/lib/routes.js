@@ -21,6 +21,7 @@ module.exports = {
     delete: id => `/api/courses/${id}`
   },
   info: '/info',
+  information: '/api/v1/information',
   login: '/login',
   refreshToken: '/refresh-token',
   registration: '/registration',

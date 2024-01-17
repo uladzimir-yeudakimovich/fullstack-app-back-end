@@ -6,6 +6,7 @@ const cors = require('cors');
 
 const { showRequestLogger, saveRequestLogger } = require('./middleware/logger');
 const infoRouter = require('./routers/info/info.router');
+const informationRouter = require('./routers/information/information.router');
 const loginRouter = require('./routers/login/login.router');
 const refreshTokenRouter = require('./routers/refresh/refresh-token.router');
 const registrationRouter = require('./routers/registration/registration.router');
@@ -41,6 +42,7 @@ app.use('/api/blogs/:id/comments', checkToken, commentsRouter);
 app.use('/api/courses', checkToken, coursesRouter);
 app.use('/api/persons', checkToken, personsRouter);
 app.use('/api/users', checkToken, usersRouter);
+app.use('/api/v1/information', checkToken, informationRouter);
 
 if (process.env.NODE_ENV === 'development') {
   const testingRouter = require('./routers/testing/testing.router');
