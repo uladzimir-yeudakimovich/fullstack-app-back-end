@@ -32,6 +32,7 @@ module.exports = {
     update: id => `/api/persons/${id}`,
     delete: id => `/api/persons/${id}`
   },
+  projects: '/api/v1/projects',
   users: {
     getAll: '/api/users',
     getById: id => `/api/users/${id}`,
