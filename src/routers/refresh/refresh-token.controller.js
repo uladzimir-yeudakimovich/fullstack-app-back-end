@@ -15,17 +15,16 @@ const getAccessToken = async token => {
     }
 
     return {
-      accessToken: sign({ id, login }, JWT_SECRET_KEY, { expiresIn: '10m' })
+      accessToken: sign({ id, login }, JWT_SECRET_KEY, { expiresIn: 600 })
     };
   });
 };
 
 const getTokens = async (id, login) => {
   return {
-    accessToken: sign({ id, login }, JWT_SECRET_KEY, { expiresIn: '5m' }),
-    refreshToken: sign({ id, login }, JWT_SECRET_KEY, { expiresIn: '30m' }),
-    expiresIn: 300,
-    refreshTokenExpiresIn: 1800
+    accessToken: sign({ id, login }, JWT_SECRET_KEY, { expiresIn: 600 }),
+    refreshToken: sign({ id, login }, JWT_SECRET_KEY, { expiresIn: 21600 }),
+    refreshTokenExpiresIn: 21600
   };
 };
 
