@@ -13,7 +13,7 @@ const personSchema = new Schema(
       unique: true
     },
     number: { type: String, required: true, minlength: 8, trim: true },
-    date: { type: Date, default: new Date() }
+    date: { type: Date, default: () => new Date() }
   },
   { versionKey: false }
 );
