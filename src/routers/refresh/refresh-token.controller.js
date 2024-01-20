@@ -15,7 +15,7 @@ const getAccessToken = async token => {
     }
 
     return {
-      accessToken: sign({ id, login }, JWT_SECRET_KEY, { expiresIn: '5m' })
+      accessToken: sign({ id, login }, JWT_SECRET_KEY, { expiresIn: '10m' })
     };
   });
 };

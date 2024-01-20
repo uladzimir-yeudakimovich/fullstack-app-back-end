@@ -20,6 +20,12 @@ module.exports = {
     update: id => `/api/courses/${id}`,
     delete: id => `/api/courses/${id}`
   },
+  feedbacks: {
+    getAll: '/api/v1/feedbacks',
+    create: '/api/v1/feedbacks',
+    update: id => `/api/v1/feedbacks/${id}`,
+    delete: id => `/api/v1/feedbacks/${id}`
+  },
   info: '/info',
   information: '/api/v1/information',
   login: '/login',
