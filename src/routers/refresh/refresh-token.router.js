@@ -13,7 +13,7 @@ router.route('/').post(async (req, res) => {
   if (result) {
     res.status(200).send({
       message: 'Successful refresh.',
-      accessToken: result.accessToken
+      ...result
     });
   } else {
     res.status(401).json({ error: 'Invalid refresh token' });
