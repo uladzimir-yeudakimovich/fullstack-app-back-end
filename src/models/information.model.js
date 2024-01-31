@@ -7,14 +7,26 @@ const generalInformationSchema = new Schema(
     general: {
       ru: { type: String, required: true },
       en: { type: String, required: true }
+    },
+    education: {
+      ru: { type: String, required: true },
+      en: { type: String, required: true }
+    },
+    experience: {
+      ru: { type: String, required: true },
+      en: { type: String, required: true }
+    },
+    technology: {
+      level: [{ type: Number, required: true }],
+      technology: { type: String, required: true }
     }
   },
   { versionKey: false }
 );
 
 generalInformationSchema.statics.toResponse = info => {
-  const { general } = info;
-  return { general };
+  const { general, education, experience, technology } = info;
+  return { general, education, experience, technology };
 };
 
 const Information = model('Information', generalInformationSchema);
